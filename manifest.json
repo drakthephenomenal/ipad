@@ -2,7 +2,7 @@
   "name": "Radha Naam Jap",
   "short_name": "Radha Jap",
   "description": "Radha Naam Jap Sadhana App",
-  "start_url": "./app.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#060D1F",
   "theme_color": "#060D1F",
