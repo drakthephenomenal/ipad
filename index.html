@@ -4765,7 +4765,7 @@ function buildPwaManifest(){
       ctx.beginPath();ctx.arc(256,256,248,0,Math.PI*2);ctx.stroke();
       const url=c.toDataURL('image/png');
       const mf={name:'Radha Naam Jap',short_name:'Radha Jap',description:'Jai Shri Radha',
-        start_url:'./index.html',scope:'./',display:'standalone',orientation:'portrait-primary',
+        start_url:'./app.html',scope:'./',display:'standalone',orientation:'portrait-primary',
         background_color:'#060D1F',theme_color:'#060D1F',
         icons:[{src:url,sizes:'512x512',type:'image/png',purpose:'any maskable'},{src:url,sizes:'192x192',type:'image/png',purpose:'any maskable'}]};
       const blob=new Blob([JSON.stringify(mf)],{type:'application/manifest+json'});
@@ -6078,7 +6078,6 @@ function renderMsView() { renderMilestonesTab(); }
 
 </script>
 
-<script src="./ipad-patch.js"></script>
 </body>
 </html>
 

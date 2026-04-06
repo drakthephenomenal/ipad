@@ -131,15 +131,16 @@ orbitalCSS.textContent = `
   }
   .ipad-orbit-char {
     position: absolute;
-    font-family: 'Noto Sans Devanagari', 'Hind Siliguri', sans-serif;
+    font-family: 'Devanagari Sangam MN', serif;
     font-size: 15px;
     font-weight: 700;
-    width: 22px;
+    width: 52px;
     height: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
     line-height: 1;
+    white-space: nowrap;
   }
   .ipad-orbit-blue .ipad-orbit-char {
     color: #4A90E2;
@@ -164,11 +165,10 @@ function buildOrbitalRings() {
   var oldRings = lsRings.querySelectorAll('.ls-ring');
   oldRings.forEach(function(r) { r.style.display = 'none'; });
 
-  var WORD = 'राधा';
-  var REPEAT = 10;
+  var REPEAT = 6;
   var chars = [];
   for (var i = 0; i < REPEAT; i++) {
-    WORD.split('').forEach(function(c) { chars.push(c); });
+    chars.push('राधा');
   }
   var total = chars.length;
 
@@ -186,7 +186,7 @@ function buildOrbitalRings() {
       var span = document.createElement('span');
       span.className = charClass;
       span.textContent = ch;
-      span.style.left = (cx - 11) + 'px';
+      span.style.left = (cx - 26) + 'px';
       span.style.top  = (cy - 11) + 'px';
       span.style.transform = 'rotate(' + angle + 'deg)';
       ring.appendChild(span);
@@ -219,7 +219,7 @@ var iPadNameCSS = document.createElement('style');
 iPadNameCSS.textContent = `
   /* 28 Names — much larger on iPad */
   .n28name {
-    font-family: 'Noto Sans Devanagari', 'Hind Siliguri', sans-serif !important;
+    font-family: 'Devanagari Sangam MN', serif !important;
     font-size: clamp(52px, 10vw, 90px) !important;
     line-height: 1.2 !important;
     padding: 0 16px !important;
@@ -257,19 +257,19 @@ iPadNameCSS.textContent = `
 
   /* ── BONUS: Larger Radha title ── */
   .rn {
-    font-family: 'Noto Sans Devanagari', sans-serif !important;
+    font-family: 'Devanagari Sangam MN', serif !important;
     font-size: clamp(36px, 6vw, 54px) !important;
   }
 
   /* ── BONUS: Larger mala flash text ── */
   .mf-line1 {
-    font-family: 'Noto Sans Devanagari', sans-serif !important;
+    font-family: 'Devanagari Sangam MN', serif !important;
     font-size: clamp(38px, 7vw, 62px) !important;
   }
 
   /* ── BONUS: Loading title font ── */
   .ls-title {
-    font-family: 'Noto Sans Devanagari', sans-serif !important;
+    font-family: 'Devanagari Sangam MN', serif !important;
     font-weight: 700 !important;
     font-size: 30px !important;
   }
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.left = (x - fs * 0.6) + 'px';
         el.style.top  = (y - fs * 0.4) + 'px';
         el.style.fontSize = fs + 'px';
-        el.style.fontFamily = "'Noto Sans Devanagari', sans-serif";
+        el.style.fontFamily = "'Devanagari Sangam MN', serif";
         el.style.fontWeight = '700';
         // Alternating gold/blue
         window._acf = !window._acf;
@@ -330,8 +330,8 @@ document.addEventListener('DOMContentLoaded', function() {
         el.className = 'fn-rv';
         var fs = 64 + Math.random() * 28;
         el.innerHTML =
-          '<span style="font-size:' + fs + 'px;font-family:Noto Sans Devanagari,sans-serif;font-weight:700">राधावल्लभ</span>' +
-          '<span style="font-size:' + (fs * 0.88) + 'px;font-family:Noto Sans Devanagari,sans-serif;font-weight:700">श्री हरिवंश</span>';
+          '<span style="font-size:' + fs + 'px;font-family:Devanagari Sangam MN,serif;font-weight:700">राधावल्लभ</span>' +
+          '<span style="font-size:' + (fs * 0.88) + 'px;font-family:Devanagari Sangam MN,serif;font-weight:700">श्री हरिवंश</span>';
         el.style.left = (x - fs * 1.4) + 'px';
         el.style.top  = (y - fs * 0.5) + 'px';
         window._acf = !window._acf;
