@@ -2,14 +2,15 @@
 // Radha Naam Jap — Service Worker
 // Update CACHE version when index.html changes
 // ═══════════════════════════════════════════════
-const CACHE = 'radha-jap-v49';  // v49: JPG→PNG icons fix for Android launcher crash
+const CACHE = 'radha-jap-v50';  // v50: Added ipad-patch.js
 
 const PRECACHE = [
-  './app.html',
+  './index.html',
   './guru.jpg',
   './icon-192.png',
   './icon-512.png',
   './manifest.json',
+  './ipad-patch.js',
   'https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js',
   'https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js',
   'https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js',
@@ -79,7 +80,7 @@ self.addEventListener('fetch', e => {
 
       return networkFetch.then(resp => {
         if (resp) return resp;
-        if (e.request.mode === 'navigate') return caches.match('./app.html');
+        if (e.request.mode === 'navigate') return caches.match('./index.html');
         return new Response('Offline', { status: 503 });
       });
     })
